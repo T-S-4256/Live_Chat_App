@@ -56,6 +56,11 @@ app.use("/api/messages", messageRouter)
 db();
 
 
-
+if(process.env.NODE_ENV!=="production"){
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server Is Live At Port No : ${PORT}`))
+}
+
+
+// EXPORT SERVER FOR VERCEL 
+export default server;
